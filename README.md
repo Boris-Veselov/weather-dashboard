@@ -8,5 +8,5 @@ HTML, CSS
 
 # Screenshot:
 
-![GitHub Logo](/images/demo.png)
+![Screenshot of index.html](./assets/images/demo.png)
 
