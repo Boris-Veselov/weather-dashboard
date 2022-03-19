@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
+
 <body>
+
+    <!-- main header -->
     <header class = "bg-dark text-white text-center p-2">
         <h1>Weather Dashboard</h1>
     </header>
+
+    <!-- main container -->
     <main class="container-fluid">
         <div class = "row">
             <div class="col-12 col-md-3 p-2 search-column">
+
+                <!-- search form -->
                 <form class = "border p-2" id = "search-form">
                     <h4>Search for a City</h2>
                     <input id="city" type = "text" autofocus = "true" class = "form-input"/>
@@ -21,6 +28,8 @@
                 </form>
                 <div class = "past-search border" id = "search-buttons"></div>
             </div>
+
+            <!-- searched weather elements -->
             <div class="col-12 col-md-9">
                 <div class = "row border selected-city" id = "current-forecast">
                     <div class = "col-12">
@@ -29,12 +38,13 @@
                     </div>  
                 </div>
                 <div class = "row border" id = "five-day-forecast">
-                        <h2 class= "col-12" id = "forecast"></h2>
-                        <div class = "d-flex" id = "fiveday-container"></div>
+                        <h2 class= "col-12" id = "weather-forecast"></h2>
+                        <div class = "d-flex" id = "fiveday"></div>
                 </div>  
             </div>
         </div>
     </main>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
