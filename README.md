@@ -8,8 +8,6 @@ My weather dashboard
 * [Technologies](#technologies)
 * [Preview](#preview)
 * [Website-link](#website-link)
-* [Installation](#installation)
-* [Usage](#usage)
 * [Contribution](#contribution)
 * [license](#license)
 * [Contact](#contact)
@@ -33,6 +31,20 @@ A weather dashboard that runs in the browser and feature dynamically updated HTM
 ## Website-link
 
 https://boris-veselov.github.io/weather-dashboard/
+
+## Contribution
+
+Boris Veselov
+
+## License
+  
+MIT license
+
+## Contact
+
+borisveselov@yahoo.com
+github.com/boris-veselov
+
 
 
 
