@@ -14,7 +14,6 @@
 
 // getCity()
 
-
 // list of variables
 var citySearchInputEl = document.querySelector("#searched");
 var cityFormEl=document.querySelector("#search-form");
@@ -26,7 +25,7 @@ var forecastTitle = document.querySelector("#weather-forecast");
 var cities = [];
 
 // submitting form
-var formSumbit = function(event){
+var formSumbit = function(event) {
     event.preventDefault();
     var city = cityInputEl.value.trim();
     if(city){
@@ -54,7 +53,7 @@ var getWeather = function(city){
 };
 
 // function for weather elements
-var displayWeather = function(weather, searchCity){
+var displayWeather = function(weather, searchCity) {
   
    var currentDate = document.createElement("span")
    currentDate.textContent=" (" + moment(weather.dt.value).format("MMM D, YYYY") + ") ";
@@ -76,8 +75,6 @@ var displayWeather = function(weather, searchCity){
    humidityEl.textContent = "Humidity: " + weather.main.humidity + " %";
    humidityEl.classList = "list-group-item"
 
- 
-
    //append to containers
    weatherContainerEl.appendChild(temperatureEl);
     weatherContainerEl.appendChild(humidityEl);
@@ -88,8 +85,8 @@ var displayWeather = function(weather, searchCity){
    getUv (lat,lon)
 }
 
-// local storage function
-var saveSearch = function(){
+// local storage function, need more work
+var saveSearch = function() {
     localStorage.setItem("cities", JSON.stringify(cities));
 };
 
@@ -106,7 +103,7 @@ var getUv = function(lat,lon){
 }
  
 // Dispay Uv function
-var displayUv = function(index){
+var displayUv = function(index) {
     var uvIndexEl = document.createElement("div");
     uvIndexEl.textContent = "UV Index: "
     uvIndexEl.classList = "list-group-item"
@@ -123,14 +120,13 @@ var displayUv = function(index){
         uvIndexValue.classList = "severe"
     };
 
-
     // append to current weather
     uvIndexEl.appendChild(uvIndexValue);
     weatherContainerEl.appendChild(uvIndexEl);
 }
 
 // fetch api
-var fiveDay = function(city){
+var fiveDay = function(city) {
     var apiKey = "844421298d794574c100e3409cee0499"
     var apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`
 
@@ -143,7 +139,7 @@ var fiveDay = function(city){
 };
 
 // to display weather elements with graphic
-var display5Day = function(weather){
+var display5Day = function(weather) {
     forecastContainerEl.textContent = ""
     forecastTitle.textContent = "Five-Day Forecast:";
 
@@ -161,7 +157,7 @@ var display5Day = function(weather){
 
        var weatherIcon = document.createElement("img")
        weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}@2x.png`);  
-        forecastEl.appendChild(weatherIcon);
+       forecastEl.appendChild(weatherIcon);
        
        
        var forecastTempEl=document.createElement("span");
