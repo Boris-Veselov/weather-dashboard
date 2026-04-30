@@ -10,47 +10,64 @@
 
 <body>
 
-    <!-- main header -->
-    <header class = "text-danger bg-dark text-center p-3">
+    <!-- storm background -->
+    <div class="weather-bg">
+      <div class="weather-strip">
+        <div class="w-panel p1"></div>
+        <div class="w-panel p2"></div>
+        <div class="w-panel p3"></div>
+        <div class="w-panel p4"></div>
+        <div class="w-panel p5"></div>
+        <div class="w-panel p6"></div>
+        <div class="w-panel p1"></div>
+        <div class="w-panel p2"></div>
+        <div class="w-panel p3"></div>
+        <div class="w-panel p4"></div>
+        <div class="w-panel p5"></div>
+        <div class="w-panel p6"></div>
+      </div>
+      <canvas id="rainCanvas"></canvas>
+    </div>
+
+    <!-- header -->
+    <header>
         <h1>Weather Dashboard</h1>
     </header>
 
-    <!-- main container -->
-    <main class="container">
-        <div class = "row">
-            <div class="col-12 col-md-3 search-column p-1">
+    <!-- main -->
+    <main>
 
-                <!-- search form -->
-                <form class = "border p-1" id = "search-form">
-                    <h4>Search for a City</h2>
-                    <input id="city" type = "text" autofocus = "true" class = "form-input"/>
-                    <button class = "btn btn-primary" type = "submit">Search</button>
-                </form>
-                
-                <div class = "past-search" id = "search-buttons"></div>
+        <!-- search section (centered top) -->
+        <div class="search-section">
+            <form id="search-form">
+                <h4>Search for a City</h4>
+                <div class="input-wrapper">
+                    <input id="city" type="text" class="form-input" placeholder="City, zip, or city + state…" autofocus="true" autocomplete="off"/>
+                    <ul id="autocomplete-list"></ul>
+                </div>
+                <button class="btn" type="submit">Search</button>
+            </form>
+            <div class="past-search" id="search-buttons"></div>
+        </div>
+
+        <!-- results (appear below search) -->
+        <div class="results-section">
+            <div id="current-forecast">
+                <h2 id="searched"></h2>
+                <div id="weather-container" class="list-group"></div>
             </div>
 
-            <!-- searched weather elements -->
-            <div class="col-12 col-md-9">
-                <div class = "row border city" id = "current-forecast">
-                    <div class = "col-12">
-                        <h2 id="searched"></h2>
-                        <div id = "weather-container" class = "list-group"></div>
-                    </div>  
-                </div>
-
-                <!-- weather container -->
-                <div class = "row border" id = "five-day-forecast">
-                        <h2 class= "col-12" id = "weather-forecast"></h2>
-                        <div class = "d-flex" id = "fiveday"></div>
-                </div>  
+            <div id="five-day-forecast">
+                <h2 id="weather-forecast"></h2>
+                <div class="forecast-cards" id="fiveday"></div>
             </div>
         </div>
+
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-   
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/weather-fx.js"></script>
 </body>
 </html>
