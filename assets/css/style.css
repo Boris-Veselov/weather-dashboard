@@ -363,3 +363,92 @@ main {
   height: 52px;
   filter: drop-shadow(0 2px 6px rgba(100, 180, 255, 0.4));
 }
+
+/* ── MOBILE ───────────────────────────────────────── */
+@media (max-width: 600px) {
+
+  /* prevent horizontal overflow */
+  html, body { overflow-x: hidden; }
+
+  /* header */
+  header { padding: 14px 12px; }
+  header h1 {
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+  }
+
+  /* layout */
+  main { padding: 16px 12px 60px; }
+  .search-section { margin-bottom: 18px; }
+
+  /* search form — full width on phone */
+  #search-form {
+    max-width: 100% !important;
+    padding: 18px 16px !important;
+    border-radius: 16px !important;
+  }
+  #search-form h4 {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+
+  /* 16px prevents iOS auto-zoom on focus */
+  #city { font-size: 16px; padding: 12px 16px; }
+
+  #search-form .btn { font-size: 13px; padding: 12px; }
+
+  /* autocomplete — bigger tap targets */
+  #autocomplete-list li { padding: 14px 16px; font-size: 15px; }
+
+  /* past search */
+  .past-search { max-width: 100%; }
+  .past-search button { font-size: 14px; padding: 11px 16px; }
+
+  /* current weather — single column, less padding */
+  #current-forecast {
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+  #searched { font-size: 1.2rem; margin-bottom: 14px; }
+  #searched img { width: 38px; height: 38px; }
+
+  #weather-container {
+    grid-template-columns: 1fr; /* stack vertically */
+    gap: 8px;
+  }
+  #weather-container .list-group-item {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  /* five-day — horizontal scroll strip */
+  #five-day-forecast {
+    padding: 18px 12px;
+    border-radius: 16px;
+  }
+  #weather-forecast { font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 14px; }
+
+  .forecast-cards {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding-bottom: 6px;
+    gap: 8px;
+    /* hide scrollbar but keep scrolling */
+    scrollbar-width: none;
+  }
+  .forecast-cards::-webkit-scrollbar { display: none; }
+
+  .forecast-cards .card {
+    flex: 0 0 110px;
+    min-width: 110px;
+  }
+  .forecast-cards .card-header { font-size: 11px; padding: 8px 4px; }
+  .forecast-cards .card-body   { font-size: 12px; padding: 6px 4px; }
+  .forecast-cards img          { width: 42px; height: 42px; }
+
+  /* sound badge */
+  #soundBadge { font-size: 12px; padding: 8px 16px; bottom: 16px; }
+}

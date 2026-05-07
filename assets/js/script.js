@@ -197,7 +197,10 @@ function hideList() {
     autocompleteList.style.display = 'none';
 }
 
-cityInputEl.addEventListener('blur', hideList);
+/* delay lets touch tap on a suggestion fire before the list hides */
+cityInputEl.addEventListener('blur', function () {
+    setTimeout(hideList, 180);
+});
 cityInputEl.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') hideList();
 });
